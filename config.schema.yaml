@@ -1,0 +1,21 @@
+---
+  d42_host: 
+    description: 'host of d42 box'
+    type: 'string'
+    required: false
+    default: '10.42.2.241'   
+  d42_api_path: 
+    description: 'path to access d42 api'
+    type: 'string' 
+    required: false
+    default: '/api/1.0/'  
+  d42_user:
+    description: 'user'
+    type: 'string'
+    required: false
+    default: 'admin'
+  d42_pass:
+    description: 'pass'
+    type: 'string'
+    required: false 
+    default: "adm!nd42"

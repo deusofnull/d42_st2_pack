@@ -1,0 +1,38 @@
+---
+name: lc_objcat_updater 
+runner_type: run-python
+description: update a devices object category  on D42 based on lifecycle events 
+enabled: true
+entry_point: 'lc_objcat_updater.py'
+parameters:
+  identifier:
+    type: 'string'
+    description: 'contains the name / serial / asset / device_id of the device on D42 to return.  '
+    required: true
+  identifier_type:
+    type: 'string'
+    description: 'designates the type of identifier used to call D42 API.  Can be name, serial, asset, or device_id.  '
+    required: true
+  lc_type_id:
+    type: 'string' 
+    description: 'id of lc id from D42'
+  d42_host:
+    description: 'host of d42 box'
+    type: 'string'
+    required: false
+    default: '{{config_context.d42_host}}'
+  d42_api_path:
+    description: 'path to access d42 api'
+    type: 'string'
+    required: false
+    default: '{{config_context.d42_api_path}}'
+  d42_user:
+    description: 'u'
+    type: 'string'
+    required: false
+    default: '{{config_context.d42_host}}'
+  d42_pass:
+    description: 'p'
+    type: 'string'
+    required: false
+    default: '{{config_context.d42_pass}}'

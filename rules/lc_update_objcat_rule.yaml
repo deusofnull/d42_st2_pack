@@ -1,0 +1,25 @@
+---
+    name: "lc_update_objcat_rule"
+    # pack: "d42"
+    description: "Rule enforcing required action upon any (configured)  lifecycle event."
+    enabled: true
+
+    trigger:
+        type: "core.st2.webhook"
+        parameters:
+            url: "d42_lifecycle"
+    #criteria:
+    #    trigger.body.data.type_id:
+    #        pattern: "{{st2kv.system.Purchased}}" # resolves to lc type_id from d42
+    #        type: "equals"
+
+    action:
+        ref: "default.lc_objcat_updater"
+        parameters:
+            identifier: "{{trigger.body.data.device_id}}" 
+            identifier_type: 'device_id'  # lc webhook responds with device_id 
+            d42_host: "https://10.42.2.241"
+            d42_api_path: "/api/1.0/"
+            d42_user: "admin"
+            d42_pass: "adm!nd42"
+            lc_type_id: "{{trigger.body.data.type_id}}" 

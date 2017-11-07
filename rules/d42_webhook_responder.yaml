@@ -1,0 +1,20 @@
+---
+    name: "d42_webhook_responder"
+    # pack: "d42"
+    description: "Sample rule resonding to d42 device updated webhook."
+    enabled: true
+
+    trigger:
+        type: "core.st2.webhook"
+        parameters:
+            url: "d42"
+
+    # criteria:
+    #    trigger.body.name:
+    #        pattern: "st2"
+    #        type: "equals"
+
+    action:
+        ref: "core.local"
+        parameters:
+            cmd: "echo \"{{trigger.body}}\" >> ~/st2.d42_webhook_responder.out"

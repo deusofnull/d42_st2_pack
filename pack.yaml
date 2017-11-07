@@ -1,0 +1,14 @@
+---
+ref: d42 
+name: D42
+description: Stackstorm pack that interfaces with Device42 to implement various automations. https://www.device42.com
+keywords:
+    - d42
+    - automation
+    - integration
+    - CMDB
+    - IPAM
+    - DCIM
+version: 0.1.0 
+author: Device42 
+email: will.acheson@device42.com   
